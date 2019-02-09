@@ -39,7 +39,7 @@
   <div class="row article-container">
     <div class="row">
       {{#each articles}}
-      <div class='card m-5' data-_id={{_id}} style="width:300px">
+      <div class='card m-5' data-_id={{_id}} style="width:400px">
         <div class="card-header">
           <img class="card-img-top mt-3 mx-auto d-block" src={{image}} style="width: 125px; height: 150px" />
         </div>
@@ -49,21 +49,21 @@
           </h5>
         </div>
         <div class="card-footer border-secondary text-left p-1 b-0 m-0">
-          <a class='btn btn-success save float-right m-2'>Save Article</a>
+          <a class='btn btn-danger delete'>Delete From Saved</a>
+          <a class='btn btn-info notes float-right'>Article Notes</a>
         </div>
       </div>
       {{/each}}
     </div>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="container">
-    <p>InfoQ Mongo Scraper</p>
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="container">
+      <p>InfoQ Mongo Scraper</p>
+    </div>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-<script src="/assets/javascript/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+  <script src="/assets/javascript/saved.js"></script>

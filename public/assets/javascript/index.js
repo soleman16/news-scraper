@@ -39,7 +39,7 @@ $(document).ready(function() {
       // It constructs a jQuery element containing all of the formatted HTML for the
       // article card
 
-      var card = $("<div class='card m-5' style=width:300px>");
+      var card = $(`<div class='card m-5' data-_id=${article._id} style=width:300px>`);
 
       let cardImage = $("<img>", {
         class: "card-img-top mt-3 mx-auto d-block",
@@ -103,6 +103,7 @@ $(document).ready(function() {
         .parents(".card")
         .remove();
   
+        console.log(articleToSave);
       articleToSave.saved = true;
       // Using a patch method to be semantic since this is an update to an existing record in our collection
       $.ajax({
