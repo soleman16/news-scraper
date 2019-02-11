@@ -136,7 +136,9 @@ module.exports = function (app) {
     // delete all documents from the collection
     app.get("/api/clear", function (req, res) {
       db.Article.remove({}).then(result => {
-        res.json(result);
+        db.Note.remove({}).then(result => {
+          res.json(result);
+        })
       })
         .catch(function (err) {
           // If an error occurred, send it to the client
