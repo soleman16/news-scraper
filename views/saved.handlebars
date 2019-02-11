@@ -37,7 +37,7 @@
 </div>
 <div class="container-fluid">
   <div class="row article-container">
-    <div class="row">
+    <div class="row w-100">
       {{#each articles}}
       <div class='card m-5' data-_id={{_id}} style="width:350px">
         <div class="card-header">
@@ -51,6 +51,18 @@
         <div class="card-footer border-secondary text-left p-1 b-0 m-0">
           <a class='btn btn-danger delete'>Delete From Saved</a>
           <a class='btn btn-info notes float-right'>Article Notes</a>
+        </div>
+      </div>
+      {{else}}
+      <div class="w-100 alert alert-warning text-center">
+        <h4>Uh Oh. Looks like we don't have any saved articles.</h4>
+      </div>
+      <div class="card w-100">
+        <div class="card-header text-center">
+          <h3>Would you like to browse available articles?</h3>
+        </div>
+        <div class="card-body text-center">
+          <h4><a href="/">Browse Articles</a></h4>
         </div>
       </div>
       {{/each}}
