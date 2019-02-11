@@ -113,7 +113,9 @@ module.exports = function (app) {
     // Route for deleting an article if saved
     app.delete("/api/headlines/:id", function (req, res) {
       db.Article.remove({ _id: req.params.id }).then(result => {
-        res.json(result);
+        db.Note.remove({_headlineId: req.params.id}).then(result => {
+          res.json(result);
+        })
       })
         .catch(function (err) {
           // If an error occurred, send it to the client
