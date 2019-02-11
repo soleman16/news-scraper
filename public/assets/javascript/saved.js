@@ -41,7 +41,7 @@ $(document).ready(function() {
       // It constructs a jQuery element containing all of the formatted HTML for the
       // article card
 
-      var card = $(`<div class='card m-5' data-_id=${article._id} style=width:400px>`);
+      var card = $(`<div class='card m-5' data-_id=${article._id} style=width:350px>`);
 
       let cardImage = $("<img>", {
         class: "card-img-top mt-3 mx-auto d-block",
@@ -75,10 +75,10 @@ $(document).ready(function() {
       // Using a joined array of HTML string data because it's easier to read/change than a concatenated string
       var emptyAlert = $(
         [
-          "<div class='alert alert-warning text-center'>",
+          "<div class='w-100 alert alert-warning text-center'>",
           "<h4>Uh Oh. Looks like we don't have any saved articles.</h4>",
           "</div>",
-          "<div class='card'>",
+          "<div class='card w-100'>",
           "<div class='card-header text-center'>",
           "<h3>Would You Like to Browse Available Articles?</h3>",
           "</div>",
@@ -98,6 +98,7 @@ $(document).ready(function() {
       // Also setting up a currentNote variable to temporarily store each note
       var notesToRender = [];
       var currentNote;
+      console.log("Notes: ", data.notes.length);
       if (!data.notes.length) {
         // If we have no notes, just display a message explaining this
         currentNote = $("<li class='list-group-item'>No notes for this article yet.</li>");
@@ -166,6 +167,7 @@ $(document).ready(function() {
           _id: currentArticle._id,
           notes: data || []
         };
+        console.log(data);
         // Adding some information about the article and article notes to the save button for easy access
         // When trying to add a new note
         $(".btn.save").data("article", noteData);

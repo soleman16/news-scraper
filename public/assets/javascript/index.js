@@ -9,10 +9,12 @@ $(document).ready(function() {
     $(".clear").on("click", handleArticleClear);
   
     function initPage() {
+      console.log("init page");
       // Run an AJAX request for any unsaved headlines
       $.get("/api/headlines?saved=false").then(function(data) {
         articleContainer.empty();
         // If we have headlines, render them to the page
+        console.log(data);
         if (data && data.length) {
           renderArticles(data);
         } else {
@@ -72,10 +74,10 @@ $(document).ready(function() {
       // Using a joined array of HTML string data because it's easier to read/change than a concatenated string
       var emptyAlert = $(
         [
-          "<div class='alert alert-warning text-center'>",
+          "<div class='w-100 alert alert-warning text-center'>",
           "<h4>Uh Oh. Looks like we don't have any new articles.</h4>",
           "</div>",
-          "<div class='card'>",
+          "<div class='card w-100'>",
           "<div class='card-header text-center'>",
           "<h3>What Would You Like To Do?</h3>",
           "</div>",
